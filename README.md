@@ -1,2 +1,3 @@
-# encryption-app
- AES Encryption/Decryption tool
+# AES Encryption/Decryption tool
+ made with WinForms
+ 
