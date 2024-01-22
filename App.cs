@@ -116,6 +116,9 @@ namespace encryption_app
         }
 
 
+
+
+
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             try
@@ -159,5 +162,42 @@ namespace encryption_app
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtRight.Text = String.Empty;
+        }
+
+        private void menuLoad_Click(object sender, EventArgs e)
+        {
+            string lineSK;
+            string lineIV;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select key file";
+            openFileDialog.ShowDialog();
+
+            using(StreamReader sr = new StreamReader(openFileDialog.FileName))
+            {
+                lineSK = sr.ReadLine();
+                lineIV = sr.ReadLine();   
+            }
+
+            txtSecretkey.Text = lineSK;
+            txtIVkey.Text = lineIV;
+
+        }
+
+        private void saveKeysToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Where do you want to save the keys";
+            openFileDialog.ShowDialog();
+
+            using(StreamWriter sw = new StreamWriter(openFileDialog.FileName))
+            {
+                sw.WriteLine(txtSecretkey.Text);
+                sw.WriteLine(txtIVkey.Text);
+            }
+        }
     }
 }

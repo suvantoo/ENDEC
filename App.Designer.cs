@@ -43,7 +43,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveKeysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtLeft
@@ -221,11 +227,65 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "The Advanced Encryption Standard [AES]";
             // 
+            // btnClear
+            // 
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.MistyRose;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.MistyRose;
+            this.btnClear.Location = new System.Drawing.Point(813, 486);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(71, 21);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuSave,
+            this.menuLoad});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(896, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuSave
+            // 
+            this.menuSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveKeysToolStripMenuItem});
+            this.menuSave.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSave.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.menuSave.Name = "menuSave";
+            this.menuSave.Size = new System.Drawing.Size(47, 20);
+            this.menuSave.Text = "Save";
+            // 
+            // menuLoad
+            // 
+            this.menuLoad.Font = new System.Drawing.Font("Consolas", 9F);
+            this.menuLoad.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.menuLoad.Name = "menuLoad";
+            this.menuLoad.Size = new System.Drawing.Size(47, 20);
+            this.menuLoad.Text = "Load";
+            this.menuLoad.Click += new System.EventHandler(this.menuLoad_Click);
+            // 
+            // saveKeysToolStripMenuItem
+            // 
+            this.saveKeysToolStripMenuItem.Name = "saveKeysToolStripMenuItem";
+            this.saveKeysToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveKeysToolStripMenuItem.Text = "Save Keys";
+            this.saveKeysToolStripMenuItem.Click += new System.EventHandler(this.saveKeysToolStripMenuItem_Click);
+            // 
             // App
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(896, 553);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -234,15 +294,19 @@
             this.Controls.Add(this.txtRight);
             this.Controls.Add(this.txtLeft);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "App";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ENDEC";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,6 +328,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuSave;
+        private System.Windows.Forms.ToolStripMenuItem menuLoad;
+        private System.Windows.Forms.ToolStripMenuItem saveKeysToolStripMenuItem;
     }
 }
 
