@@ -169,22 +169,28 @@ namespace encryption_app
 
         private void menuLoad_Click(object sender, EventArgs e)
         {
-            string lineSK;
-            string lineIV;
-
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select key file";
-            openFileDialog.ShowDialog();
-
-            using(StreamReader sr = new StreamReader(openFileDialog.FileName))
+            try
             {
-                lineSK = sr.ReadLine();
-                lineIV = sr.ReadLine();   
+                string lineSK;
+                string lineIV;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Title = "Select key file";
+                openFileDialog.ShowDialog();
+
+                using (StreamReader sr = new StreamReader(openFileDialog.FileName))
+                {
+                    lineSK = sr.ReadLine();
+                    lineIV = sr.ReadLine();
+                }
+
+                txtSecretkey.Text = lineSK;
+                txtIVkey.Text = lineIV;
             }
-
-            txtSecretkey.Text = lineSK;
-            txtIVkey.Text = lineIV;
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+            }
         }
 
         private void saveKeysToolStripMenuItem_Click(object sender, EventArgs e)
